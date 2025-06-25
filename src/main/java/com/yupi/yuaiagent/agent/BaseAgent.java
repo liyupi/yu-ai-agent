@@ -173,6 +173,12 @@ public abstract class BaseAgent {
             this.cleanup();
             log.info("SSE connection completed");
         });
+        // 设置错误回调
+        sseEmitter.onError(() -> {
+            this.state = AgentState.ERROR;
+            this.cleanup();
+            log.warn("SSE connection error");
+        });
         return sseEmitter;
     }
 
