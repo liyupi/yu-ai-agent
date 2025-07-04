@@ -1,0 +1,102 @@
+// 暗色主题
+[data-theme='dark'], 
+.dark {
+  // 文本颜色
+  --text-color-primary: var(--gray-100);
+  --text-color-secondary: var(--gray-300);
+  --text-color-tertiary: var(--gray-400);
+  --text-color-disabled: var(--gray-600);
+  --text-color-inverse: var(--gray-900);
+  
+  // 背景颜色
+  --background-color: var(--gray-900);
+  --background-color-secondary: var(--gray-800);
+  --background-color-tertiary: var(--gray-700);
+  --background-color-elevated: var(--gray-800);
+  
+  // 边框颜色
+  --border-color: var(--gray-700);
+  --border-color-light: var(--gray-800);
+  --border-color-dark: var(--gray-600);
+  
+  // 滚动条
+  --scrollbar-track: var(--gray-800);
+  --scrollbar-thumb: var(--gray-600);
+  --scrollbar-thumb-hover: var(--gray-500);
+  
+  // 阴影（暗色主题下的阴影）
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+// 赛博朋克主题
+[data-theme='cyber'], 
+.cyber {
+  // 背景
+  --background-color: var(--cyber-black);
+  --background-color-secondary: var(--cyber-dark);
+  --background-color-tertiary: rgba(17, 17, 34, 0.8);
+  --background-color-elevated: rgba(17, 17, 34, 0.9);
+  
+  // 文本颜色
+  --text-color-primary: var(--cyber-light);
+  --text-color-secondary: rgba(237, 247, 255, 0.8);
+  --text-color-tertiary: rgba(237, 247, 255, 0.6);
+  
+  // 主题色
+  --primary-color: var(--cyber-blue);
+  --secondary-color: var(--cyber-purple);
+  --accent-color: var(--cyber-pink);
+  
+  // 边框
+  --border-color: rgba(0, 240, 255, 0.3);
+  --border-color-light: rgba(0, 240, 255, 0.2);
+  --border-color-dark: rgba(0, 240, 255, 0.5);
+  
+  // 阴影
+  --shadow-sm: 0 0 10px rgba(0, 240, 255, 0.1);
+  --shadow-md: 0 0 20px rgba(0, 240, 255, 0.2);
+  --shadow-lg: 0 0 30px rgba(0, 240, 255, 0.3);
+  --shadow-xl: 0 0 40px rgba(0, 240, 255, 0.4);
+  
+  // 滚动条
+  --scrollbar-track: var(--cyber-dark);
+  --scrollbar-thumb: var(--cyber-blue);
+  --scrollbar-thumb-hover: var(--cyber-purple);
+}
+
+// 主题切换动画
+html {
+  transition: var(--transition-colors);
+}
+
+* {
+  transition: var(--transition-colors);
+}
+
+// 预设配色方案适配
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+// 减少动画（用户偏好设置）
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,331 @@
+// 基础动画
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+// 旋转动画
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+// 震动动画
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+// 打字机效果
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary-color);
+  }
+}
+
+// 赛博朋克风格动画
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0 0 5px rgba(0, 240, 255, 0.7),
+      0 0 10px rgba(0, 240, 255, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 5px rgba(0, 240, 255, 0.7),
+      0 0 10px rgba(0, 240, 255, 0.5),
+      0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  100% {
+    text-shadow: 
+      0 0 5px rgba(0, 240, 255, 0.7),
+      0 0 10px rgba(0, 240, 255, 0.5);
+  }
+}
+
+@keyframes glitch-anim {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px var(--cyber-blue),
+      0 0 10px var(--cyber-blue),
+      0 0 15px var(--cyber-blue);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px var(--cyber-blue),
+      0 0 20px var(--cyber-blue),
+      0 0 30px var(--cyber-blue);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+// 动画工具类
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.4s ease forwards;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.4s ease forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.animate-scaleOut {
+  animation: scaleOut 0.3s ease forwards;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-glitch {
+  animation: glitch 2s infinite;
+}
+
+.animate-neonGlow {
+  animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+// 过渡工具类
+.transition-all {
+  transition: var(--transition-all);
+}
+
+.transition-colors {
+  transition: var(--transition-colors);
+}
+
+.transition-transform {
+  transition: var(--transition-transform);
+}
+
+.transition-opacity {
+  transition: var(--transition-opacity);
+}
+
+// 悬停效果
+.hover-lift {
+  transition: var(--transition-transform);
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.hover-scale {
+  transition: var(--transition-transform);
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.hover-glow {
+  transition: var(--transition-all);
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+  }
+}
