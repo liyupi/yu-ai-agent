@@ -11,6 +11,22 @@ const routes = [
     }
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
+    meta: {
+      title: '用户登录 - 鱼皮AI超级智能体应用平台'
+    }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/Register.vue'),
+    meta: {
+      title: '用户注册 - 鱼皮AI超级智能体应用平台'
+    }
+  },
+  {
     path: '/love-master',
     name: 'LoveMaster',
     component: () => import('../views/LoveMaster.vue'),
@@ -44,4 +60,4 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-export default router 
+export default router

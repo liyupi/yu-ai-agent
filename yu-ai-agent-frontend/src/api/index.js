@@ -6,10 +6,21 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
  : 'http://localhost:8123/api' // 开发环境指向本地后端服务
 
 // 创建axios实例
-const request = axios.create({
+export const request = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 60000
+  timeout: 60000,
+  withCredentials: true // 允许携带 Cookie
 })
+
+// 响应拦截器
+request.interceptors.response.use(
+  response => {
+    return response.data
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
 
 // 封装SSE连接
 export const connectSSE = (url, params, onMessage, onError) => {
@@ -57,4 +68,4 @@ export const chatWithManus = (message) => {
 export default {
   chatWithLoveApp,
   chatWithManus
-} 
+}
