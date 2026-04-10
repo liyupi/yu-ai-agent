@@ -11,7 +11,7 @@ spring:
   ai:
     dashscope:
       # 需要替换为你自己的 key
-      api-key: your-api-key
+      api-key: ${DASHSCOPE_API_KEY:REPLACE_ME}
       chat:
         options:
           model: qwen-plus
@@ -59,7 +59,14 @@ knife4j:
 # searchAPI
 search-api:
   # 需要替换为你自己的 key
-  api-key: 你的 API Key
+  api-key: ${SEARCH_API_KEY:REPLACE_ME}
+
+app:
+  security:
+    # 保护 /ai/** 接口的 API Key（请求头默认 X-API-Key）
+    api-key: ${YU_AI_AGENT_API_KEY:change-me-api-key}
+    header-name: X-API-Key
+    protected-prefix: /ai/
 # 修改日志级别，查看 Spring AI 更多调用细节
 logging:
   level:

@@ -11,7 +11,7 @@ public class HttpAiInvoke {
 
     public static void main(String[] args) {
         // API密钥
-        String apiKey = TestApiKey.API_KEY;
+        String apiKey = TestApiKey.getApiKey();
 
         // 构建请求URL
         String url = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation";

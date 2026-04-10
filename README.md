@@ -296,3 +296,24 @@ RAG 核心特性实战：
 - AI 生成前端代码
 - AI 服务 Serverless 部
 
+## 安全配置（新增）
+
+为避免密钥硬编码并提升接口安全基线，项目新增了以下约定：
+
+1. 所有模型/搜索 Key 通过环境变量注入：
+
+- `DASHSCOPE_API_KEY`
+- `SEARCH_API_KEY`
+- `YU_AI_AGENT_DEMO_API_KEY`
+
+2. `/ai/**` 接口默认启用 API Key 鉴权：
+
+- 服务端环境变量：`YU_AI_AGENT_API_KEY`
+- 请求头名称：`X-API-Key`
+
+示例请求：
+
+```bash
+curl -H "X-API-Key: $YU_AI_AGENT_API_KEY" \
+  "http://localhost:8123/api/ai/love_app/chat/sync?message=hello&chatId=demo"
+```

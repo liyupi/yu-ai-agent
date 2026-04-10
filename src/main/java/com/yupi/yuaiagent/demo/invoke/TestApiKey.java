@@ -3,8 +3,12 @@ package com.yupi.yuaiagent.demo.invoke;
 /**
  * 仅用于测试获取 API Key
  */
-public interface TestApiKey {
+public final class TestApiKey {
 
-    // 修改为你的 API Key
-    String API_KEY = "修改为你的 API Key";
+    private TestApiKey() {
+    }
+
+    public static String getApiKey() {
+        return System.getenv().getOrDefault("YU_AI_AGENT_DEMO_API_KEY", "REPLACE_ME");
+    }
 }
