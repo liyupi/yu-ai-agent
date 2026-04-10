@@ -317,3 +317,19 @@ RAG 核心特性实战：
 curl -H "X-API-Key: $YU_AI_AGENT_API_KEY" \
   "http://localhost:8123/api/ai/love_app/chat/sync?message=hello&chatId=demo"
 ```
+
+## Baseline Maintenance
+
+### Environment
+
+- Put runtime credentials in environment variables.
+- Use `.env.example` as the configuration template.
+
+### CI
+
+- `baseline-ci.yml` provides a unified pipeline with `lint + build + test + secret scan`.
+
+### Repo Hygiene
+
+- Keep generated files (`dist/`, `build/`, `__pycache__/`, `.idea/`, `.DS_Store`) out of version control.
+
