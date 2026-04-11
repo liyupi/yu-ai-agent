@@ -333,3 +333,10 @@ curl -H "X-API-Key: $YU_AI_AGENT_API_KEY" \
 
 - Keep generated files (`dist/`, `build/`, `__pycache__/`, `.idea/`, `.DS_Store`) out of version control.
 
+
+## Contributor Quick Verification
+<!-- clean-diff-b30-readme -->
+
+- Build with the project-recommended command
+- Run tests before opening PR
+- Keep each PR scoped to one concern
