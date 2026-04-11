@@ -296,3 +296,10 @@ RAG 核心特性实战：
 - AI 生成前端代码
 - AI 服务 Serverless 部
 
+
+## Contributor Quick Verification
+<!-- clean-diff-b30-final -->
+
+- Build with project-recommended command
+- Run tests before opening PR
+- Keep each PR scoped to one concern
