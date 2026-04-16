@@ -11,12 +11,12 @@ spring:
   ai:
     dashscope:
       # 需要替换为你自己的 key
-      api-key: your-api-key
+      api-key: ${DASHSCOPE_API_KEY:your-api-key}
       chat:
         options:
           model: qwen-plus
     ollama:
-      base-url: http://localhost:11434
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
       chat:
         model: gemma3:1b
 # 临时注释掉，便于大家开发调试和部署（实际需要启动 MCP 服务）
@@ -59,7 +59,7 @@ knife4j:
 # searchAPI
 search-api:
   # 需要替换为你自己的 key
-  api-key: 你的 API Key
+  api-key: ${SEARCH_API_KEY:你的 API Key}
 # 修改日志级别，查看 Spring AI 更多调用细节
 logging:
   level:
