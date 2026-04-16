@@ -33,11 +33,25 @@ npm install
 npm run dev
 ```
 
+前端开发服务器默认运行在 `http://localhost:3000` 。
+
 ### 构建项目
 
 ```bash
 npm run build
 ```
+
+### 本地联调说明
+
+- 开发环境默认请求 `http://localhost:8123/api`
+- 生产环境使用相对路径 `/api`，方便和后端部署在同一域名下
+- 启动前请先确认后端服务已经运行
+
+### 常用联调顺序
+
+1. 在仓库根目录启动后端服务
+2. 进入 `yu-ai-agent-frontend` 执行 `npm run dev`
+3. 打开 `http://localhost:3000` 进行本地访问
 
 ## 后端接口
 
@@ -47,9 +61,3 @@ npm run build
 - `/api/ai/manus/chat` - AI超级智能体聊天接口
 
 后端服务默认运行在 `http://localhost:8123`
-
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
