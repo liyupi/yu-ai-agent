@@ -167,6 +167,21 @@ RAG 核心特性实战：
 
 代码仓库：https://github.com/liyupi/yu-ai-agent
 
+### 仓库结构速览
+
+| 目录 | 作用 | 适合什么时候看 |
+| --- | --- | --- |
+| `src/main/java/com/yupi/yuaiagent` | Spring Boot 后端主工程，包含 AI 应用、Agent、RAG 和工具实现 | 跟做后端主线、排查核心流程时 |
+| `src/test/java/com/yupi/yuaiagent` | 后端功能和工具测试用例 | 对照示例、补测或排查回归时 |
+| `yu-ai-agent-frontend` | Vue 3 前端工程，负责页面交互和 SSE 对话体验 | 联调页面、排查前端请求时 |
+| `yu-image-search-mcp-server` | 图片搜索 MCP 服务示例 | 学习 MCP 服务开发与接入时 |
+
+推荐阅读顺序：
+
+1. 先看后端主工程，熟悉 AI 恋爱大师和 YuManus 的主流程
+2. 再看前端工程，理解接口调用方式和页面交互
+3. 最后按需阅读 MCP 服务和测试代码
+
 ### AI 学习资源
 
 建议大家在学习 AI 项目的过程中，持续阅读 AI 大模型相关的面试题，巩固知识点。这块鱼皮已经帮大家拿捏了，我们的程序员面试刷题神器面试鸭搞了个 [AI 大模型面试题库](https://www.mianshiya.com/bank/1906189461556076546)，建议没事就阅读一些题目来学习学习。
@@ -295,4 +310,3 @@ RAG 核心特性实战：
 - AI 智能体接口开发
 - AI 生成前端代码
 - AI 服务 Serverless 部
-
