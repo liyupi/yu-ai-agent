@@ -3,6 +3,27 @@ spring:
     name: yu-ai-agent
   profiles:
     active: local
+  # Redis 配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      # 如果有密码，取消下面的注释并设置密码
+      # password: your-redis-password
+      # 数据库索引
+      database: 0
+      # 连接超时时间
+      timeout: 10000ms
+      lettuce:
+        pool:
+          # 最大连接数
+          max-active: 8
+          # 最大空闲连接数
+          max-idle: 8
+          # 最小空闲连接数
+          min-idle: 0
+          # 连接等待时间
+          max-wait: -1ms
 # 临时注释掉，便于大家开发调试和部署（实际填写 PgVector 数据库信息）
 #  datasource:
 #    url: xxx
