@@ -9,6 +9,8 @@
 
 ## 项目介绍
 
+可选实践：[使用 Parallel Search MCP 搜索网页和获取页面内容](docs/parallel-search-mcp.md)。
+
 > 视频介绍：https://www.bilibili.com/video/BV1UoLezKEbm
 
 这是一套以 **AI 开发实战** 为核心的项目教程，将通过开发 **AI 恋爱大师应用 + 拥有自主规划能力的超级智能体**，带大家掌握新时代程序员必知必会的 AI 核心概念、AI 实用工具、AI 编程技术、AI 框架原理、AI 调优技巧，大幅增加求职的竞争力！

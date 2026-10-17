@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "parallel-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.15.1",
+        "https://search.parallel.ai/mcp",
+        "--transport",
+        "http-only",
+        "--header",
+        "User-Agent: yu-ai-agent"
+      ]
+    }
+  }
+}
