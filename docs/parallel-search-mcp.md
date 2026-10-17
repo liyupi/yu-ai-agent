@@ -19,7 +19,7 @@ npx --version
 
 ## 2. 按需启用配置
 
-项目根目录下的 [mcp-servers-parallel.json](mcp-servers-parallel.json) 是独立的 stdio 配置示例，只连接 Parallel，不会启动高德或图片搜索服务。在 Windows 上，将其中的 `"command": "npx"` 改为 `"command": "npx.cmd"`。参数中的 `User-Agent` 用于标识本项目的请求，无需添加 `Authorization`。
+`docs/` 目录中的 [mcp-servers-parallel.json](mcp-servers-parallel.json) 是独立的 stdio 配置示例，只连接 Parallel，不会启动高德或图片搜索服务。在 Windows 上，将其中的 `"command": "npx"` 改为 `"command": "npx.cmd"`。参数中的 `User-Agent` 用于标识本项目的请求，无需添加 `Authorization`。
 
 在已有的 `src/main/resources/application-local.yml` 中，把以下配置合并到对应的 `spring.ai` 节点下，不要覆盖已有的模型、数据库或其他配置。默认激活的 profile 是 `local`：
 
