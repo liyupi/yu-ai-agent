@@ -9,6 +9,7 @@
 - 安装 Node.js 22 LTS，并确保启动 Java 应用的环境能找到 `node` 和 `npx`。
 - 如果调用 `LoveApp`，仍需完成项目原有的 Java 21 和模型配置。无需填写 Parallel 的 API Key；这不代替 DashScope 等模型服务的凭据。
 - 首次运行 `npx` 会下载 `mcp-remote@0.15.1`，需要访问 npm 和 `https://search.parallel.ai`。
+- 示例启用了 `--enable-proxy`，如有需要，可通过 Java 进程继承的 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY` 设置代理；未设置时直接连接。
 
 在启动应用的同一个终端检查：
 
