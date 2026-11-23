@@ -5,6 +5,7 @@ import com.yupi.yuaiagent.advisor.ReReadingAdvisor;
 import com.yupi.yuaiagent.chatmemory.FileBasedChatMemory;
 import com.yupi.yuaiagent.rag.LoveAppRagCustomAdvisorFactory;
 import com.yupi.yuaiagent.rag.QueryRewriter;
+import com.yupi.yuaiagent.service.RateLimitService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -29,6 +30,11 @@ import java.util.List;
 public class LoveApp {
 
     private final ChatClient chatClient;
+    
+    @Resource
+    private RateLimitService rateLimitService;
+    
+    private static final String RATE_LIMIT_EXCEEDED_MESSAGE = "请求太频繁，请稍后再试";
 
     private static final String SYSTEM_PROMPT = "扮演深耕恋爱心理领域的专家。开场向用户表明身份，告知用户可倾诉恋爱难题。" +
             "围绕单身、恋爱、已婚三种状态提问：单身状态询问社交圈拓展及追求心仪对象的困扰；" +
@@ -69,6 +75,12 @@ public class LoveApp {
      * @return
      */
     public String doChat(String message, String chatId) {
+        // 限流检查
+        if (!rateLimitService.isAllowed(chatId)) {
+            log.warn("用户 {} 超过限流限制，拒绝请求", chatId);
+            return RATE_LIMIT_EXCEEDED_MESSAGE;
+        }
+        
         ChatResponse chatResponse = chatClient
                 .prompt()
                 .user(message)
@@ -88,6 +100,12 @@ public class LoveApp {
      * @return
      */
     public Flux<String> doChatByStream(String message, String chatId) {
+        // 限流检查
+        if (!rateLimitService.isAllowed(chatId)) {
+            log.warn("用户 {} 超过限流限制，拒绝请求", chatId);
+            return Flux.just(RATE_LIMIT_EXCEEDED_MESSAGE);
+        }
+        
         return chatClient
                 .prompt()
                 .user(message)
