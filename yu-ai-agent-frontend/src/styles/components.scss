@@ -1,0 +1,245 @@
+// 按钮组件样式
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-all);
+  user-select: none;
+  white-space: nowrap;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // 尺寸变体
+  &--sm {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  &--lg {
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--font-size-lg);
+  }
+  
+  // 主要按钮
+  &--primary {
+    background-color: var(--primary-color);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--primary-color-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+  
+  // 次要按钮
+  &--secondary {
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-primary);
+    border-color: var(--border-color);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--background-color-tertiary);
+      border-color: var(--border-color-dark);
+    }
+  }
+  
+  // 危险按钮
+  &--danger {
+    background-color: var(--accent-color);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: #d73527;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+  
+  // 幽灵按钮
+  &--ghost {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+}
+
+// 卡片组件样式
+.card {
+  background-color: var(--background-color-elevated);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-all);
+  
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  &__header {
+    margin-bottom: var(--spacing-4);
+    
+    &-title {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-color-primary);
+      margin-bottom: var(--spacing-2);
+    }
+    
+    &-subtitle {
+      font-size: var(--font-size-sm);
+      color: var(--text-color-secondary);
+    }
+  }
+  
+  &__body {
+    color: var(--text-color-primary);
+    line-height: var(--line-height-relaxed);
+  }
+  
+  &__footer {
+    margin-top: var(--spacing-4);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--border-color-light);
+  }
+}
+
+// 输入框样式
+.input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-base);
+  color: var(--text-color-primary);
+  background-color: var(--background-color);
+  transition: var(--transition-all);
+  
+  &::placeholder {
+    color: var(--text-color-tertiary);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: var(--background-color-secondary);
+  }
+  
+  &--error {
+    border-color: var(--accent-color);
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.1);
+    }
+  }
+}
+
+// 徽章样式
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  
+  &--primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  &--secondary {
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-secondary);
+  }
+  
+  &--success {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  &--warning {
+    background-color: var(--warning-color);
+    color: var(--gray-900);
+  }
+  
+  &--danger {
+    background-color: var(--accent-color);
+    color: white;
+  }
+}
+
+// 分割线
+.divider {
+  height: 1px;
+  background-color: var(--border-color-light);
+  border: none;
+  margin: var(--spacing-4) 0;
+  
+  &--vertical {
+    width: 1px;
+    height: auto;
+    margin: 0 var(--spacing-4);
+  }
+}
+
+// 工具类
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

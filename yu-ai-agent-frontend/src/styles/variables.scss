@@ -1,0 +1,147 @@
+// 颜色变量
+:root {
+  // 主题色
+  --primary-color: #1a73e8;
+  --primary-color-light: #4285f4;
+  --primary-color-dark: #1557b0;
+  --secondary-color: #34a853;
+  --accent-color: #ea4335;
+  --warning-color: #fbbc04;
+  
+  // 中性色
+  --white: #ffffff;
+  --black: #000000;
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f4;
+  --gray-200: #e8eaed;
+  --gray-300: #dadce0;
+  --gray-400: #bdc1c6;
+  --gray-500: #9aa0a6;
+  --gray-600: #80868b;
+  --gray-700: #5f6368;
+  --gray-800: #3c4043;
+  --gray-900: #202124;
+  
+  // 文本颜色
+  --text-color-primary: var(--gray-900);
+  --text-color-secondary: var(--gray-700);
+  --text-color-tertiary: var(--gray-500);
+  --text-color-disabled: var(--gray-400);
+  --text-color-inverse: var(--white);
+  
+  // 背景颜色
+  --background-color: var(--white);
+  --background-color-secondary: var(--gray-50);
+  --background-color-tertiary: var(--gray-100);
+  --background-color-elevated: var(--white);
+  
+  // 边框颜色
+  --border-color: var(--gray-300);
+  --border-color-light: var(--gray-200);
+  --border-color-dark: var(--gray-400);
+  
+  // 阴影
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  
+  // 滚动条
+  --scrollbar-track: var(--gray-100);
+  --scrollbar-thumb: var(--gray-400);
+  --scrollbar-thumb-hover: var(--gray-500);
+  
+  // 赛博朋克风格色彩
+  --cyber-blue: #00f0ff;
+  --cyber-purple: #9000ff;
+  --cyber-pink: #ff00d4;
+  --cyber-green: #00ff88;
+  --cyber-black: #0a0a12;
+  --cyber-dark: #111122;
+  --cyber-light: #edf7ff;
+}
+
+// 字体变量
+:root {
+  --font-family-base: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  
+  --font-size-xs: 0.75rem;    // 12px
+  --font-size-sm: 0.875rem;   // 14px
+  --font-size-base: 1rem;     // 16px
+  --font-size-lg: 1.125rem;   // 18px
+  --font-size-xl: 1.25rem;    // 20px
+  --font-size-2xl: 1.5rem;    // 24px
+  --font-size-3xl: 1.875rem;  // 30px
+  --font-size-4xl: 2.25rem;   // 36px
+  --font-size-5xl: 3rem;      // 48px
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  --line-height-base: var(--line-height-normal);
+}
+
+// 间距变量
+:root {
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   // 4px
+  --spacing-2: 0.5rem;    // 8px
+  --spacing-3: 0.75rem;   // 12px
+  --spacing-4: 1rem;      // 16px
+  --spacing-5: 1.25rem;   // 20px
+  --spacing-6: 1.5rem;    // 24px
+  --spacing-8: 2rem;      // 32px
+  --spacing-10: 2.5rem;   // 40px
+  --spacing-12: 3rem;     // 48px
+  --spacing-16: 4rem;     // 64px
+  --spacing-20: 5rem;     // 80px
+  --spacing-24: 6rem;     // 96px
+  --spacing-32: 8rem;     // 128px
+}
+
+// 圆角变量
+:root {
+  --border-radius-none: 0;
+  --border-radius-sm: 0.125rem;   // 2px
+  --border-radius-base: 0.25rem;  // 4px
+  --border-radius-md: 0.375rem;   // 6px
+  --border-radius-lg: 0.5rem;     // 8px
+  --border-radius-xl: 0.75rem;    // 12px
+  --border-radius-2xl: 1rem;      // 16px
+  --border-radius-3xl: 1.5rem;    // 24px
+  --border-radius-full: 9999px;
+}
+
+// 过渡动画
+:root {
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+  
+  --transition-all: all var(--transition-base);
+  --transition-colors: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+  --transition-transform: transform var(--transition-base);
+  --transition-opacity: opacity var(--transition-base);
+}
+
+// Z-index层级
+:root {
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-toast: 1080;
+}
